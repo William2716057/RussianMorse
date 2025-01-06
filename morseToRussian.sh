@@ -18,20 +18,19 @@ morse_dict=(
 )
 
 from_morse() {
-	input_string=$"1"
+	input_string="$1"
 	output_string=""
 
-	for (( i=0; i<{#input_string}; i++ )); do
-		char="${input_string:i:1};
-		if [[ -n "${morse_dict[$char]} " then
-			output_string+="${morse_[$char]} "
+	for code in $input_string; do
+		if [[ -n "${morse_dict[$code]}" ]]; then
+			output_string+="${morse_dict[$code]}"
 		else
-			output_string+="/" 
+			output_string+="/"
 		fi
 	done
 
 	echo "$output_string"
 
 }
-input = "-.."
+input="-.. --- .-.."
 echo "$(from_morse "$input")"
