@@ -25,7 +25,7 @@ from_morse() {
 		if [[ -n "${morse_dict[$code]}" ]]; then
 			output_string+="${morse_dict[$code]}"
 		else
-			output_string+="/"
+			output_string+="Char unrecognised"
 		fi
 	done
 
