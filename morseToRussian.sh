@@ -1,4 +1,4 @@
-#!/nom/bash
+#!/bin/bash
 
 declare -A morse_dict
 
