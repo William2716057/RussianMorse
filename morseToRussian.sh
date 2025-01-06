@@ -33,3 +33,5 @@ from_morse() {
 	echo "$output_string"
 
 }
+input = "-.."
+echo "$(from_morse "$input")"
