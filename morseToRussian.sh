@@ -16,3 +16,20 @@ morse_dict=(
     "-.-.-." : ";", "-.--." : "(", "-.--.-" : ")", ".---." : "&", "-...-" : "=",
     ".-.-." : "+", "-.--." : "/", "...-..-" : "$", ".--.-." : "@", "/" : " "
 )
+
+from_morse() {
+	input_string=$"1"
+	output_string=""
+
+	for (( i=0; i<{#input_string}; i++ )); do
+		char="${input_string:i:1};
+		if [[ -n "${morse_dict[$char]} " then
+			output_string+="${morse_[$char]} "
+		else
+			output_string+="/" 
+		fi
+	done
+
+	echo "$output_string"
+
+}
