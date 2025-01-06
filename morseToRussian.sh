@@ -33,5 +33,6 @@ from_morse() {
 	echo "$output_string"
 
 }
-input="--.-. -... ....."
+# input="--.-. -... .....
+read input
 echo "$(from_morse "$input")"
